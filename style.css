@@ -1,0 +1,147 @@
+/* ============================= */
+/* Custom Keyframe Animations    */
+/* ============================= */
+
+/* Bouncing for main ball */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-35%); /* Increased bounce height */
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+
+
+/* Fade-in and upward for entrances */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Blob morphing */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* ============================= */
+/* Animation Utility Classes     */
+/* ============================= */
+
+.animate-bounce-slow {
+  -webkit-animation: bounce-slow 1s infinite;
+  animation: bounce-slow 1s infinite;
+}
+
+.animate-tagline-bounce {
+  animation: tagline-bounce 1.2s infinite;
+}
+
+.animate-fade-in-up {
+  -webkit-animation: fade-in-up 0.8s ease-out forwards;
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-blob {
+  -webkit-animation: blob 7s infinite;
+  animation: blob 7s infinite;
+}
+
+/* Animation delays for sequencing */
+.delay-100   { animation-delay: 0.1s; }
+.delay-200   { animation-delay: 0.2s; }
+.delay-300   { animation-delay: 0.3s; }
+.delay-500   { animation-delay: 0.5s; }
+.delay-700   { animation-delay: 0.7s; }
+.delay-1000  { animation-delay: 1s; }
+.delay-2000  { animation-delay: 2s; }
+
+/* Hide elements until animated in (optional) */
+.fade-in-up:not(.animated),
+.animate-fade-in-up:not(.animated) {
+  opacity: 0;
+}
+
+/* ============================= */
+/* Font Sizes (Tailwind-inspired)*/
+/* ============================= */
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-5xl { font-size: 3rem; line-height: 1; }
+.text-6xl { font-size: 3.75rem; line-height: 1; }
+.text-8xl { font-size: 6rem; line-height: 1; }
+
+/* Tagline font larger */
+.text-xl-lg {
+  font-size: 1.75rem;    /* Larger than text-xl (1.25rem) */
+  line-height: 2.25rem;
+}
+
+/* ============================= */
+/* Gradient text example         */
+/* ============================= */
+
+.gradient-text {
+  background: linear-gradient(45deg, #a855f7 40%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================= */
+/* SVG Icon Sizing (optional)    */
+/* ============================= */
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ============================= */
+/* Button Styles (optional)      */
+/* ============================= */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 rgb(130 50 210 / 12%);
+  transition: box-shadow 0.15s;
+}
+.btn-gradient {
+  background: linear-gradient(45deg, #a855f7, #ec4899);
+  color: #fff;
+}
+.btn-white {
+  background: #fff;
+  color: #222;
+}
+.btn:hover, .btn-gradient:hover, .btn-white:hover {
+  box-shadow: 0 4px 16px 0 rgb(130 50 210 / 18%);
+}
